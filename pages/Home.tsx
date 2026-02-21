@@ -124,20 +124,75 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        {/* Grid */}
+        {/* Grid - Layout em Lista Vertical */}
         {loading ? (
           <div className="text-center py-20">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-700"></div>
             <p className="mt-4 text-gray-500">Carregando revistas...</p>
           </div>
         ) : filteredMagazines.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="space-y-6 max-w-5xl mx-auto">
             {filteredMagazines.map(mag => (
-              <MagazineCard 
-                key={mag.id} 
-                magazine={mag} 
-                onView={handleOpenViewer}
-              />
+              <div 
+                key={mag.id}
+                className="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100"
+              >
+                <div className="flex flex-col sm:flex-row gap-6 p-6">
+                  {/* Capa */}
+                  <div className="flex-shrink-0">
+                    <img 
+                      src={mag.coverUrl} 
+                      alt={mag.title}
+                      className="w-full sm:w-48 h-64 object-cover rounded-lg shadow-md"
+                    />
+                  </div>
+                  
+                  {/* Conteúdo */}
+                  <div className="flex-grow flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-start justify-between gap-4 mb-3">
+                        <h3 className="text-2xl font-bold text-gray-900 hover:text-green-700 transition-colors">
+                          {mag.title}
+                        </h3>
+                        <span className="flex-shrink-0 px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">
+                          {mag.category}
+                        </span>
+                      </div>
+                      
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        {mag.description}
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-4">
+                        <span className="flex items-center gap-1">
+                          <BookOpen size={16} className="text-green-600" />
+                          Edição {mag.edition}
+                        </span>
+                        <span>•</span>
+                        <span>Ano {mag.year}</span>
+                        <span>•</span>
+                        <span>{new Date(mag.uploadDate).toLocaleDateString('pt-PT')}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-3">
+                      <button
+                        onClick={() => handleOpenViewer(mag)}
+                        className="px-6 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors font-semibold shadow-md"
+                      >
+                        Ler Artigo
+                      </button>
+                      <a
+                        href={mag.pdfUrl}
+                        download
+                        className="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-semibold"
+                      >
+                        Baixar PDF
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         ) : (

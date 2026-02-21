@@ -23,17 +23,27 @@ const DadosRevista: React.FC = () => {
                 <h2 className="text-2xl font-bold text-green-900 mb-4">Informações Básicas</h2>
                 <div className="space-y-2">
                   <p><strong>Nome:</strong> RevistaAfrica</p>
-                  <p><strong>Responsável:</strong> Eng. Claire Messias Colaço Sardinha Casquinha (MBA)</p>
+                  <p><strong>Responsável:</strong> PhD. Carolina Mendes Figueiredo</p>
                   <p><strong>Editora 1:</strong> Dra. Paciência Veremos</p>
-                  <p><strong>Editora 2:</strong> Cármen Inês Colaço Sardinha Casquinha</p>
+                  <p><strong>Editora 2:</strong> Cármen Inês</p>
+                  <p><strong>Contacto:</strong> revistaafricaa@gmail.com</p>
                 </div>
               </div>
 
-              {/* Descrição */}
+              {/* Sobre a RevistaAfrica */}
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-3">Descrição</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">Sobre a RevistaAfrica</h2>
+                <p className="text-justify mb-4">
+                  A RevistaAfrica é uma revista acadêmica dedicada à valorização do conhecimento, da pesquisa e da reflexão crítica sobre temas contemporâneos que impactam África e a sociedade global. O seu objectivo é avaliar e divulgar trabalhos científicos, artigos de opinião e estudos interdisciplinares de forma rigorosa e acessível, promovendo a troca de ideias entre pesquisadores, estudantes e profissionais.
+                </p>
+                <p className="text-justify mb-4">
+                  A revista foi criada na sequência de um fórum que reuniu diversos acadêmicos de várias partes do mundo, no qual se reconheceu a necessidade de expandir e democratizar o conhecimento junto de toda a comunidade africana. A partir desse encontro, foram selecionados editores de diferentes países, responsáveis por garantir o contacto permanente com acadêmicos, instituições de ensino e centros de investigação, fortalecendo assim a dimensão internacional e colaborativa da revista.
+                </p>
                 <p className="text-justify">
-                  A RevistaAfrica é uma publicação acadêmica dedicada à valorização do conhecimento, da pesquisa e da reflexão crítica sobre temas contemporâneos que impactam África e a sociedade global. Nosso objectivo é avaliar e divulgar trabalhos científicos, artigos de opinião e estudos interdisciplinares de forma rigorosa e acessível, promovendo a troca de ideias entre pesquisadores, estudantes e profissionais. A revista busca estimular a produção acadêmica de qualidade, contribuir para o debate científico e fortalecer a cultura de investigação e inovação no continente africano.
+                  A RevistaAfrica tem como sua base representativa em Moçambique, onde é dirigida por Professores Doutores de diversas categorias e áreas do saber, comprometidos com a excelência científica, a ética acadêmica e a promoção do pensamento crítico. Por meio dessa estrutura editorial plural e qualificada, a revista busca estimular a produção acadêmica de qualidade, contribuir para o debate científico e fortalecer a cultura de investigação e inovação no continente africano.
+                </p>
+                <p className="text-center mt-6 text-xl font-bold text-green-800 italic">
+                  RevistaAfrica – "Conhecimento africano que inspira o mundo".
                 </p>
               </div>
 

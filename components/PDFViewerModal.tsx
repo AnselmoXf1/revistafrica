@@ -47,10 +47,24 @@ const PDFViewerModal: React.FC<PDFViewerModalProps> = ({ magazine, isOpen, onClo
           {/* Body - PDF Viewer */}
           <div className="flex-grow bg-gray-100 relative overflow-hidden">
              <iframe 
-               src={`https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent(magazine.pdfUrl)}`}
+               src={`${magazine.pdfUrl}#view=FitH`}
                className="w-full h-full border-0" 
                title="PDF Viewer"
+               allow="fullscreen"
              ></iframe>
+          </div>
+
+          {/* Download Button */}
+          <div className="bg-gray-50 px-6 py-3 border-t border-gray-200 flex justify-center">
+            <a
+              href={magazine.pdfUrl}
+              download={`${magazine.title}.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors font-semibold shadow-md"
+            >
+              Baixar PDF
+            </a>
           </div>
         </div>
       </div>

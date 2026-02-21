@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://revistafrica.vercel.app', 'https://www.revistafrica.vercel.app']
+    ? ['https://revistafrica.vercel.app', 'https://www.revistafrica.vercel.app', 'https://revistafrica.com', 'https://www.revistafrica.com']
     : '*',
   credentials: true,
   optionsSuccessStatus: 200
