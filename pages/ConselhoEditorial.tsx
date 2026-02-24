@@ -42,7 +42,7 @@ const ConselhoEditorial: React.FC = () => {
                   <div className="bg-gray-50 p-5 rounded-lg">
                     <p className="font-semibold text-gray-900">Leida Carlota</p>
                   </div>
-                </div>
+                </div>git push origin main
               </div>
 
               {/* Comissão Científica */}

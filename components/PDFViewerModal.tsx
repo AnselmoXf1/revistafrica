@@ -47,7 +47,7 @@ const PDFViewerModal: React.FC<PDFViewerModalProps> = ({ magazine, isOpen, onClo
           {/* Body - PDF Viewer */}
           <div className="flex-grow bg-gray-100 relative overflow-hidden">
              <iframe 
-               src={`${magazine.pdfUrl}#view=FitH`}
+               src={`https://docs.google.com/viewer?url=${encodeURIComponent(magazine.pdfUrl)}&embedded=true`}
                className="w-full h-full border-0" 
                title="PDF Viewer"
                allow="fullscreen"
@@ -55,7 +55,7 @@ const PDFViewerModal: React.FC<PDFViewerModalProps> = ({ magazine, isOpen, onClo
           </div>
 
           {/* Download Button */}
-          <div className="bg-gray-50 px-6 py-3 border-t border-gray-200 flex justify-center">
+          <div className="bg-gray-50 px-6 py-3 border-t border-gray-200 flex justify-center gap-3">
             <a
               href={magazine.pdfUrl}
               download={`${magazine.title}.pdf`}
@@ -64,6 +64,14 @@ const PDFViewerModal: React.FC<PDFViewerModalProps> = ({ magazine, isOpen, onClo
               className="px-6 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors font-semibold shadow-md"
             >
               Baixar PDF
+            </a>
+            <a
+              href={magazine.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold shadow-md"
+            >
+              Abrir em Nova Aba
             </a>
           </div>
         </div>
