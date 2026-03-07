@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, Filter, BookOpen } from 'lucide-react';
 import { Magazine } from '../types';
 import { magazinesAPI } from '../services/api';
@@ -6,6 +7,7 @@ import MagazineCard from '../components/MagazineCard';
 import PDFViewerModal from '../components/PDFViewerModal';
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
   const [magazines, setMagazines] = useState<Magazine[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todas');
@@ -151,7 +153,10 @@ const Home: React.FC = () => {
                   <div className="flex-grow flex flex-col justify-between">
                     <div>
                       <div className="flex items-start justify-between gap-4 mb-3">
-                        <h3 className="text-2xl font-bold text-gray-900 hover:text-green-700 transition-colors">
+                        <h3 
+                          className="text-2xl font-bold text-gray-900 hover:text-green-700 transition-colors cursor-pointer"
+                          onClick={() => navigate(`/artigo/${mag._id || mag.id}`)}
+                        >
                           {mag.title}
                         </h3>
                         <span className="flex-shrink-0 px-3 py-1 bg-green-100 text-green-800 text-sm font-semibold rounded-full">
@@ -177,8 +182,14 @@ const Home: React.FC = () => {
                     
                     <div className="flex gap-3">
                       <button
-                        onClick={() => handleOpenViewer(mag)}
+                        onClick={() => navigate(`/artigo/${mag._id || mag.id}`)}
                         className="px-6 py-2 bg-green-700 text-white rounded-lg hover:bg-green-800 transition-colors font-semibold shadow-md"
+                      >
+                        Ver Detalhes
+                      </button>
+                      <button
+                        onClick={() => handleOpenViewer(mag)}
+                        className="px-6 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors font-semibold"
                       >
                         Ler Artigo
                       </button>

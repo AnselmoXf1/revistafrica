@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -12,6 +13,7 @@ import Submissoes from './pages/Submissoes';
 import ConselhoEditorial from './pages/ConselhoEditorial';
 import DadosRevista from './pages/DadosRevista';
 import Contacto from './pages/Contacto';
+import ArticleDetail from './pages/ArticleDetail';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -32,6 +34,7 @@ const AppContent: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/artigo/:id" element={<ArticleDetail />} />
           <Route path="/submissoes" element={<Submissoes />} />
           <Route path="/conselho-editorial" element={<ConselhoEditorial />} />
           <Route path="/dados-revista" element={<DadosRevista />} />
@@ -72,11 +75,13 @@ const AppContent: React.FC = () => {
 const App: React.FC = () => {
   console.log('App component loaded');
   return (
-    <AuthProvider>
-      <HashRouter>
-        <AppContent />
-      </HashRouter>
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <HashRouter>
+          <AppContent />
+        </HashRouter>
+      </AuthProvider>
+    </HelmetProvider>
   );
 };
 

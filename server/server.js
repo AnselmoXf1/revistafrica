@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import magazineRoutes from './routes/magazines.js';
 import authRoutes from './routes/auth.js';
+import sitemapRoutes from './routes/sitemap.js';
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ mongoose.connect(process.env.MONGODB_URI)
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/magazines', magazineRoutes);
+app.use('/api', sitemapRoutes);
 
 // Health check
 app.get('/', (req, res) => {

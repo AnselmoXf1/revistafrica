@@ -1,4 +1,4 @@
-import rateLimit from 'express-rate-limit';
+*import rateLimit from 'express-rate-limit';
 
 // Rate limiter para login - 3 tentativas por 15 minutos
 export const loginLimiter = rateLimit({

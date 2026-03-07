@@ -15,7 +15,8 @@ Sistema completo para gerenciamento e visualização de revistas acadêmicas onl
 
 ## 🚀 URLs de Produção
 
-- **Frontend**: https://revistafrica.vercel.app
+- **Frontend Principal**: https://revistafrica.com
+- **Frontend Alternativo**: https://revistafrica.vercel.app
 - **Backend API**: https://api.revistafrica.onrender.com
 
 ## 🛠️ Tecnologias

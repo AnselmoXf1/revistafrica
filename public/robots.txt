@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Allow: /#/artigo/
+Allow: /#/submissoes
+Allow: /#/conselho-editorial
+Allow: /#/dados-revista
+Allow: /#/contacto
+Disallow: /#/admin
+Disallow: /#/login
 
-Sitemap: https://revistafrica.vercel.app/sitemap.xml
+Sitemap: https://revistafrica.com/api/sitemap.xml

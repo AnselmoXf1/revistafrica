@@ -1,7 +1,8 @@
 # 🚀 Deploy para Produção
 
 ## URLs de Produção
-- **Frontend**: https://revistafrica.vercel.app
+- **Frontend**: https://revistafrica.com
+- **Frontend Alternativo**: https://revistafrica.vercel.app
 - **Backend**: https://api.revistafrica.onrender.com
 
 ---
