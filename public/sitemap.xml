@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Página Principal -->
   <url>
-    <loc>https://revistafrica.vercel.app/</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://revistafrica.com/</loc>
+    <lastmod>2026-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  <!-- Páginas Estáticas -->
   <url>
-    <loc>https://revistafrica.vercel.app/submissoes</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://revistafrica.com/#/submissoes</loc>
+    <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://revistafrica.vercel.app/conselho-editorial</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://revistafrica.com/#/conselho-editorial</loc>
+    <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://revistafrica.vercel.app/dados-revista</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://revistafrica.com/#/dados-revista</loc>
+    <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://revistafrica.vercel.app/contacto</loc>
-    <lastmod>2026-02-21</lastmod>
+    <loc>https://revistafrica.com/#/contacto</loc>
+    <lastmod>2026-03-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
+  <!-- NOTA IMPORTANTE: -->
+  <!-- Este é apenas um sitemap estático com páginas básicas -->
+  <!-- Para sitemap COMPLETO com TODOS os artigos, use: -->
+  <!-- https://revistafrica.com/api/sitemap.xml -->
+  <!-- O sitemap dinâmico é gerado pelo backend e inclui todos os artigos -->
 </urlset>
