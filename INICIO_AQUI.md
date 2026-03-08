@@ -10,7 +10,7 @@ Tudo está pronto para deploy! Este guia rápido te ajudará a começar.
 
 - **Principal**: https://revistafrica.com
 - **Alternativo**: https://revistafrica.vercel.app
-- **API**: https://api.revistafrica.onrender.com
+- **API**: https://api-revistafrica.onrender.com
 
 ---
 

@@ -36,10 +36,10 @@ const ArticleStructuredData: React.FC<ArticleStructuredDataProps> = ({ article }
     },
     "volumeNumber": article.edition.toString(),
     "inLanguage": "pt",
-    "url": `https://revistafrica.com/#/artigo/${article._id || article.id}`,
+    "url": `https://revistafrica.com/artigo/${article._id || article.id}`,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://revistafrica.com/#/artigo/${article._id || article.id}`
+      "@id": `https://revistafrica.com/artigo/${article._id || article.id}`
     },
     "about": {
       "@type": "Thing",

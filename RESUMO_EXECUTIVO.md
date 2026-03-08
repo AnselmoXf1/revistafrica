@@ -20,7 +20,7 @@ Preparar o site RevistaAfrica para indexação completa no Google e Google Schol
 |------|-----|-----|
 | **Principal** | https://revistafrica.com | Produção e SEO |
 | **Alternativo** | https://revistafrica.vercel.app | Deploy Vercel |
-| **API** | https://api.revistafrica.onrender.com | Backend |
+| **API** | https://api-revistafrica.onrender.com | Backend |
 
 ---
 

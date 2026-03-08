@@ -74,13 +74,13 @@ O Render vai fazer deploy automático do código corrigido.
 
 **Teste 1: Backend**
 ```
-Abra: https://api.revistafrica.onrender.com/api/health
+Abra: https://api-revistafrica.onrender.com/api/health
 ✅ Deve retornar: {"status":"ok"}
 ```
 
 **Teste 2: Sitemap**
 ```
-Abra: https://api.revistafrica.onrender.com/api/sitemap.xml
+Abra: https://api-revistafrica.onrender.com/api/sitemap.xml
 ✅ Deve mostrar XML com lista de URLs
 ```
 
@@ -121,9 +121,9 @@ Abra: https://revistafrica.com
 | Tipo | URL | Status |
 |------|-----|--------|
 | **Frontend** | https://revistafrica.com | ✅ |
-| **Backend** | https://api.revistafrica.onrender.com | ✅ |
-| **Sitemap** | https://api.revistafrica.onrender.com/api/sitemap.xml | ✅ |
-| **Health** | https://api.revistafrica.onrender.com/api/health | ✅ |
+| **Backend** | https://api-revistafrica.onrender.com | ✅ |
+| **Sitemap** | https://api-revistafrica.onrender.com/api/sitemap.xml | ✅ |
+| **Health** | https://api-revistafrica.onrender.com/api/health | ✅ |
 
 ### Desenvolvimento
 | Tipo | URL |

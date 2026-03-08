@@ -44,7 +44,7 @@
 1. Abra: https://revistafrica.com
    ✅ Deve carregar o site
 
-2. Abra: https://api.revistafrica.onrender.com/api/sitemap.xml
+2. Abra: https://api-revistafrica.onrender.com/api/sitemap.xml
    ✅ Deve mostrar XML com URLs
 
 3. No site, clique em "Ver Detalhes" de um artigo

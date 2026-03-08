@@ -14,7 +14,7 @@ Sistema completo de indexação para Google e Google Scholar implementado com su
 ### URLs do Site
 - **Domínio Principal**: https://revistafrica.com
 - **Domínio Alternativo**: https://revistafrica.vercel.app
-- **Backend API**: https://api.revistafrica.onrender.com
+- **Backend API**: https://api-revistafrica.onrender.com
 
 ---
 

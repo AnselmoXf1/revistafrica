@@ -17,7 +17,7 @@ Sistema completo para gerenciamento e visualização de revistas acadêmicas onl
 
 - **Frontend Principal**: https://revistafrica.com
 - **Frontend Alternativo**: https://revistafrica.vercel.app
-- **Backend API**: https://api.revistafrica.onrender.com
+- **Backend API**: https://api-revistafrica.onrender.com
 
 ## 🛠️ Tecnologias
 
@@ -99,14 +99,14 @@ FRONTEND_URL=https://revistafrica.vercel.app
 
 ### Frontend (.env)
 ```env
-VITE_API_URL=https://api.revistafrica.onrender.com/api
+VITE_API_URL=https://api-revistafrica.onrender.com/api
 ```
 
 ## 🧪 Testes
 
 ### Testar Backend
 ```bash
-curl https://api.revistafrica.onrender.com/api/health
+curl https://api-revistafrica.onrender.com/api/health
 ```
 
 ### Testar Frontend

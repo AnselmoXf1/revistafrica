@@ -13,7 +13,7 @@
 - **Indexação**: Secundário
 
 ### Backend API
-- **URL**: https://api.revistafrica.onrender.com
+- **URL**: https://api-revistafrica.onrender.com
 - **Uso**: API REST
 
 ---
@@ -234,7 +234,7 @@ curl -I https://www.revistafrica.com
 
 ### Frontend (.env)
 ```env
-VITE_API_URL=https://api.revistafrica.onrender.com/api
+VITE_API_URL=https://api-revistafrica.onrender.com/api
 ```
 
 ### Backend (.env)

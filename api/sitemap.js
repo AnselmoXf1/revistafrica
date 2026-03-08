@@ -1,12 +1,9 @@
-import express from 'express';
-import Magazine from '../models/Magazine.js';
-
-const router = express.Router();
-
-// GET /api/sitemap.xml - Gerar sitemap dinâmico
-router.get('/sitemap.xml', async (req, res) => {
+export default async function handler(req, res) {
   try {
-    const magazines = await Magazine.find().sort({ uploadDate: -1 });
+    // Buscar artigos da API
+    const response = await fetch('https://api.revistafrica.onrender.com/api/magazines');
+    const magazines = await response.json();
+    
     const baseUrl = 'https://revistafrica.com';
     
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -51,33 +48,11 @@ ${magazines.map(mag => `  <url>
   </url>`).join('\n')}
 </urlset>`;
 
-    res.header('Content-Type', 'application/xml');
-    res.header('Cache-Control', 'public, max-age=3600'); // Cache de 1 hora
-    res.send(sitemap);
+    res.setHeader('Content-Type', 'application/xml');
+    res.setHeader('Cache-Control', 'public, max-age=3600');
+    res.status(200).send(sitemap);
   } catch (error) {
     console.error('Erro ao gerar sitemap:', error);
-    res.status(500).send('Erro ao gerar sitemap');
+    res.status(500).json({ error: 'Erro ao gerar sitemap' });
   }
-});
-
-// GET /api/robots.txt - Gerar robots.txt
-router.get('/robots.txt', (req, res) => {
-  const baseUrl = 'https://revistafrica.com';
-  const robotsTxt = `User-agent: *
-Allow: /
-Allow: /artigo/
-Allow: /submissoes
-Allow: /conselho-editorial
-Allow: /dados-revista
-Allow: /contacto
-Disallow: /admin
-Disallow: /login
-
-Sitemap: ${baseUrl}/api/sitemap.xml
-`;
-
-  res.header('Content-Type', 'text/plain');
-  res.send(robotsTxt);
-});
-
-export default router;
+}

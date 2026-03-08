@@ -53,7 +53,7 @@ const ArticleDetail: React.FC = () => {
     );
   }
 
-  const articleUrl = `https://revistafrica.com/#/artigo/${article._id || article.id}`;
+  const articleUrl = `https://revistafrica.com/artigo/${article._id || article.id}`;
   const publishDate = new Date(article.uploadDate).toISOString().split('T')[0];
 
   return (
