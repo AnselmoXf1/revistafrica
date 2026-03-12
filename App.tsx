@@ -13,7 +13,8 @@ import Submissoes from './pages/Submissoes';
 import ConselhoEditorial from './pages/ConselhoEditorial';
 import DadosRevista from './pages/DadosRevista';
 import Contacto from './pages/Contacto';
-import ArticleDetail from './pages/ArticleDetail';
+import Artigos from './pages/Artigos';
+import ArtigoIndividual from './pages/ArtigoIndividual';
 
 // Protected Route Component
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -34,7 +35,9 @@ const AppContent: React.FC = () => {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/artigo/:id" element={<ArticleDetail />} />
+          <Route path="/artigos" element={<Artigos />} />
+          <Route path="/artigo/:id" element={<ArtigoIndividual />} />
+          <Route path="/artigo-livro/:id" element={<ArtigoIndividual />} />
           <Route path="/submissoes" element={<Submissoes />} />
           <Route path="/conselho-editorial" element={<ConselhoEditorial />} />
           <Route path="/dados-revista" element={<DadosRevista />} />

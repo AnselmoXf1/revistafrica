@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /artigos
+Allow: /artigo/
+Allow: /submissoes
+Allow: /conselho-editorial
+Allow: /dados-revista
+Allow: /contacto
+Disallow: /admin
+Disallow: /login
+
+Sitemap: https://revistafrica.com/sitemap.xml

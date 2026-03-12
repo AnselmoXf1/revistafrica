@@ -8,7 +8,24 @@ export default defineConfig(({ mode }) => {
       server: {
         port: 3000,
         host: '0.0.0.0',
-        middlewareMode: false,
+        open: true,
+        proxy: {
+          '/api': {
+            target: 'http://localhost:5000',
+            changeOrigin: true,
+            secure: false
+          },
+          '/sitemap.xml': {
+            target: 'http://localhost:5000',
+            changeOrigin: true,
+            secure: false
+          },
+          '/robots.txt': {
+            target: 'http://localhost:5000',
+            changeOrigin: true,
+            secure: false
+          }
+        }
       },
       plugins: [react()],
       build: {

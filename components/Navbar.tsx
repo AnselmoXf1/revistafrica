@@ -47,6 +47,16 @@ const Navbar: React.FC = () => {
               Início
             </Link>
             <Link
+              to="/artigos"
+              className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                isActive('/artigos') 
+                  ? 'bg-green-900 text-white' 
+                  : 'text-green-50 hover:text-white hover:bg-green-900/50'
+              }`}
+            >
+              Artigos
+            </Link>
+            <Link
               to="/submissoes"
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                 isActive('/submissoes') 
@@ -156,6 +166,17 @@ const Navbar: React.FC = () => {
               }`}
             >
               Início
+            </Link>
+            <Link
+              to="/artigos"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block px-4 py-2 rounded-md text-sm font-medium ${
+                isActive('/artigos') 
+                  ? 'bg-green-900 text-white' 
+                  : 'text-green-50 hover:bg-green-900/50'
+              }`}
+            >
+              Artigos
             </Link>
             <Link
               to="/submissoes"

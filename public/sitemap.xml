@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Página Principal -->
+  <url>
+    <loc>https://revistafrica.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2026-03-12</lastmod>
+  </url>
+  
+  <!-- Página de Artigos -->
+  <url>
+    <loc>https://revistafrica.com/artigos</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Páginas Estáticas -->
+  <url>
+    <loc>https://revistafrica.com/submissoes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://revistafrica.com/conselho-editorial</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://revistafrica.com/dados-revista</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://revistafrica.com/contacto</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Artigos/Livros da Plataforma (42 artigos) -->
+  
+  <!-- 1. Comportamento da posse, uso e conservação de redes mosquiteiras na comunidade de Chingodzi, cidade de Tete, 2025 -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69b057085da4a84d56fffedc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+  
+  <!-- 2. Ética empresarial e o desenvolvimento das pequenas e médias empresas (PMEs) -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69b0549d5da4a84d56fffed7</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-10</lastmod>
+  </url>
+  
+  <!-- 3. Quase 1000 problemas resolvidos de física clássica (mecânica, termodinâmica, eletromagnetismo) -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a7dac53dc3bbcf257fb14b</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-04</lastmod>
+  </url>
+  
+  <!-- 4. Cálculos estequiométricos-estudo e aprendizagem química. -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a7d9443dc3bbcf257fb147</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-04</lastmod>
+  </url>
+  
+  <!-- 5. O impacto da digitalização do pagamento de contribuições na modernização administrativa do INSS em Moçambique -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a7d6503dc3bbcf257fb143</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-04</lastmod>
+  </url>
+  
+  <!-- 6. Morologia vetal do fruto -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a465a7b390da114a66bafc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  
+  <!-- 7. Delineamento experimental DBCC -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a46311b390da114a66baf1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  
+  <!-- 8. Delineamento experimental-DCC -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a462d7b390da114a66baed</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  
+  <!-- 9. A Contribuição do Sector Informal para o Desenvolvimento Econômico Regional em Moçambique: Desafios e Perspectivas -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a46110b390da114a66bae6</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  
+  <!-- 10. Análise do Impacto das Microfinanças no Desenvolvimento Econômico das Comunidades Rurais em Moçambique: Caso do distrito de Changara -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a460cfb390da114a66bae2</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  
+  <!-- 11. A in(validação) da pirâmide da responsabilidade social de Carroll num contexto de filantropia: estudo de caso da Coca-Cola -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a45a95871bf80fb3eb9d20</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-03-01</lastmod>
+  </url>
+  
+  <!-- 12. Conflitos entre Ocupação Informal do Solo e a Lei de Terras: Implicações para a Gestão de Zonas de Risco em Moçambique -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69a077aa9bdb5651e9861baf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-26</lastmod>
+  </url>
+  
+  <!-- 13. Funcionamento dos Conselhos de Escola nas Instituições Públicas do ensino primário no distrito de Báruè (2024–2025): estudo de caso em três Escolas Primárias -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699dd100d78ce9c153c45dfc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-24</lastmod>
+  </url>
+  
+  <!-- 14. Educar o homem para vencer a guerra criar um sociedade nova e desenvolver a pátria -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699c11f83e3a7da9d5358853</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-23</lastmod>
+  </url>
+  
+  <!-- 15. História Geral da África -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699c11283e3a7da9d535884f</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-23</lastmod>
+  </url>
+  
+  <!-- 16. Homem-Mais-Rico-da-Babilonia -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699c0fbf3e3a7da9d535884a</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-23</lastmod>
+  </url>
+  
+  <!-- 17. O_poder_do_Hábito -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699c0f233e3a7da9d5358844</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-23</lastmod>
+  </url>
+  
+  <!-- 18. Pensa  Enriquece - Dominando a Mentalidade para a Riqueza e o Sucesso. -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699c0e483e3a7da9d535883f</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-23</lastmod>
+  </url>
+  
+  <!-- 19. Introdução à Fruticultura -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699b3f9f9223a9408fda26c3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 20. Microbiologia geral (Manual) -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699b3d2a9223a9408fda26be</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 21. Moringa" a miracle plant of agro forestry and southern punjab, pakistan -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699b3aea9223a9408fda26ba</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 22. Caracterização farmacognóstica da raiz de euclea natalensis (Mulala) -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699b399e9223a9408fda26b6</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 23. Impacto do marketing interno na motivação e retenção de colaboradores -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699b34a59223a9408fda26ae</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 24. O papel da cooperação internacional na redução das desigualdades no acesso à educação em Moçambique entre 2020 e 2025 -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699b31239223a9408fda26aa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 25. Impacto da capacitação comunitária no empreendimento local como factor de desenvolvimento regional e local na província de Tete -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699b2e649223a9408fda26a4</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 26. Impactos sócioambientais decorrentes da ocupação desordenada do espaço físico nas áreas suburbanas: caso do bairro Tambara 2 -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699af9c7b6810e2f3c97ad62</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 27. Os efeitos da estrutura organizacional sobre o desempenho dos funcionários: caso de estudo da empresa Vodacom de Chimoio 2021-2023 -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699af937b6810e2f3c97ad5e</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 28. Fluxo de caixa como instrumento para a organização financeira e tomada de decisão na Empresa Mega Fresh cidade de Chimoio -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699af8afb6810e2f3c97ad59</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 29. Análise a produtividade das empresas e custos de produção -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699af7b5b6810e2f3c97ad53</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 30. A accountability como vector da promoção da transparência e boa governação do sector público, no contexto moçambicano: caso de estudo do Município de Chimoio (2019-2021) -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699af72db6810e2f3c97ad4d</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 31. Planeamento e estudo da Matemática Financeira -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699ae28f0de0cc498257d145</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 32. Criação e maneio de aves poedeiras -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699adfa40de0cc498257d140</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-22</lastmod>
+  </url>
+  
+  <!-- 33. Manual de Cultivo de pimenta nucleares-produção de pimenta em grandes quantidades (Maneio) -->
+  <url>
+    <loc>https://revistafrica.com/artigo/6999d83bf945c3a3862c5808</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 34. Maneio integrado de produção de Suinos -->
+  <url>
+    <loc>https://revistafrica.com/artigo/6999d7a2f945c3a3862c5804</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 35. Barreiras aos negócios internacionais: aspectos relacionados à internacionalização e expatriação -->
+  <url>
+    <loc>https://revistafrica.com/artigo/6999d58af945c3a3862c57ff</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 36. Entradas das empresas em um mercado internacional -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69999d035359a92cf3da302f</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 37. O papel das empresas de financiamento de projectos agropecuários na promoção do desenvolvimento rural: um estudo de caso da Agencia do Vale de Zambeze -->
+  <url>
+    <loc>https://revistafrica.com/artigo/69999c795359a92cf3da3029</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 38. Apologia de Sócrates", de Platão -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699995055359a92cf3da301c</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 39. A Arte da Guerra -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699994135359a92cf3da3014</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 40. Maneio de suinocultura e seus elementos principais de criação (Manual) -->
+  <url>
+    <loc>https://revistafrica.com/artigo/699992fb5359a92cf3da300f</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 41. Administração Pública comparada, no âmbito da separação de poder Moçambique e África do Sul -->
+  <url>
+    <loc>https://revistafrica.com/artigo/6999563b3137750a9a2730c8</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+  
+  <!-- 42. O Papel das Pequenas e Médias Empresas (PMEs) na geração de emprego e desenvolvimento Econômico Regional: Caso da cidade de Tete -->
+  <url>
+    <loc>https://revistafrica.com/artigo/6999443c3137750a9a2730ad</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2026-02-21</lastmod>
+  </url>
+</urlset>
