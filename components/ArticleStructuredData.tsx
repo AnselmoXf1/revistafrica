@@ -7,6 +7,8 @@ interface ArticleStructuredDataProps {
 }
 
 const ArticleStructuredData: React.FC<ArticleStructuredDataProps> = ({ article }) => {
+  const articleUrl = `https://revistafrica.com/artigo/${article._id || article.id}`;
+  
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
@@ -36,19 +38,35 @@ const ArticleStructuredData: React.FC<ArticleStructuredDataProps> = ({ article }
     },
     "volumeNumber": article.edition.toString(),
     "inLanguage": "pt",
-    "url": `https://revistafrica.com/artigo/${article._id || article.id}`,
+    "url": articleUrl,
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://revistafrica.com/artigo/${article._id || article.id}`
+      "@id": articleUrl
     },
     "about": {
       "@type": "Thing",
       "name": article.category
     },
-    "encoding": {
+    "encoding": [
+      {
+        "@type": "MediaObject",
+        "contentUrl": article.pdfUrl,
+        "encodingFormat": "application/pdf",
+        "name": article.title,
+        "description": "Versão PDF do documento"
+      }
+    ],
+    "associatedMedia": {
       "@type": "MediaObject",
       "contentUrl": article.pdfUrl,
-      "encodingFormat": "application/pdf"
+      "encodingFormat": "application/pdf",
+      "name": article.title
+    },
+    "workExample": {
+      "@type": "DigitalDocument",
+      "fileFormat": "application/pdf",
+      "url": article.pdfUrl,
+      "name": article.title
     }
   };
 

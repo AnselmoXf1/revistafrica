@@ -64,6 +64,14 @@ const ArticleDetail: React.FC = () => {
         <meta name="description" content={article.description} />
         <link rel="canonical" href={articleUrl} />
         
+        {/* Link para o PDF - IMPORTANTE para o Google mostrar badge PDF */}
+        <link rel="alternate" type="application/pdf" href={article.pdfUrl} />
+        
+        {/* Meta tags para identificar como documento PDF */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="document-type" content="PDF" />
+        <meta name="file-type" content="application/pdf" />
+        
         {/* Google Scholar Meta Tags */}
         <meta name="citation_title" content={article.title} />
         <meta name="citation_author" content="RevistaAfrica" />
@@ -74,6 +82,7 @@ const ArticleDetail: React.FC = () => {
         <meta name="citation_abstract" content={article.description} />
         <meta name="citation_language" content="pt" />
         <meta name="citation_publisher" content="RevistaAfrica" />
+        <meta name="citation_keywords" content={`${article.category}, ${article.title}, PDF, Moçambique`} />
         
         {/* Dublin Core Meta Tags */}
         <meta name="DC.title" content={article.title} />
@@ -85,6 +94,8 @@ const ArticleDetail: React.FC = () => {
         <meta name="DC.type" content="Text" />
         <meta name="DC.format" content="application/pdf" />
         <meta name="DC.language" content="pt" />
+        <meta name="DC.identifier" content={articleUrl} />
+        <meta name="DC.relation" content={article.pdfUrl} />
         
         {/* Open Graph */}
         <meta property="og:title" content={article.title} />
