@@ -1,7 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Heart, Mail } from 'lucide-react';
 
 const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleYearClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate('/login');
+  };
+
   return (
     <footer className="bg-gradient-to-r from-green-900 to-green-800 border-t border-green-950 mt-auto">
       <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
@@ -55,7 +63,12 @@ const Footer: React.FC = () => {
         <div className="border-t border-green-700 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-green-300 text-sm">
-              © <a href="/#/login" className="hover:text-white transition-colors cursor-pointer">{new Date().getFullYear()}</a> Revista África. Todos os direitos reservados.
+              © <button 
+                onClick={handleYearClick}
+                className="hover:text-white transition-colors cursor-pointer bg-transparent border-0 p-0 font-inherit underline-offset-2 hover:underline"
+              >
+                {new Date().getFullYear()}
+              </button> Revista África. Todos os direitos reservados.
             </div>
             <div className="flex items-center gap-1 text-sm text-green-200">
               Desenvolvido por  
