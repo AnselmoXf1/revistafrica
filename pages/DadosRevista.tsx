@@ -1,111 +1,182 @@
 import React from 'react';
-import { BookOpen, Info } from 'lucide-react';
+import { BookOpen, Target, Eye, Globe, Award, Users, Info, Layers } from 'lucide-react';
 
-const DadosRevista: React.FC = () => {
-  return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center py-16 px-4">
-      <div className="max-w-4xl w-full bg-white border border-gray-300 shadow-sm">
-        {/* Header Institucional */}
-        <div className="bg-brand-900 text-white p-8 border-b-4 border-yellow-600 flex flex-col items-center text-center">
-          <Info size={48} className="text-yellow-500 mb-4" />
-          <h1 className="text-4xl font-serif font-bold tracking-tight">Dados da Revista</h1>
-          <p className="text-xl text-brand-100 font-serif mt-2">
-            Informações sobre a Revista África
-          </p>
+const META = [
+  { label: 'Nome',         value: 'Revista África' },
+  { label: 'Responsável',  value: 'PhD. Carolina Mendes Figueiredo' },
+  { label: 'Editora 1',    value: 'Dra. Paciência Veremos' },
+  { label: 'Editora 2',    value: 'Cármen Inês' },
+  { label: 'E-mail',       value: 'revistaafricaa@gmail.com' },
+  { label: 'ISSN',         value: '0000-0000' },
+  { label: 'Qualis CAPES', value: 'A2' },
+  { label: 'Periodicidade',value: 'Contínua (rolling)' },
+  { label: 'Idiomas',      value: 'Português, Inglês, Espanhol' },
+  { label: 'Acesso',       value: 'Aberto e Gratuito' },
+];
+
+const VALUES = [
+  { icon: '🔬', title: 'Rigor Científico',      desc: 'Compromisso com a qualidade e precisão dos conteúdos publicados.' },
+  { icon: '⚖️', title: 'Ética e Transparência', desc: 'Práticas justas e claras na seleção e publicação de trabalhos.' },
+  { icon: '💡', title: 'Inovação',               desc: 'Incentivo à originalidade e novas abordagens de estudo.' },
+  { icon: '🌍', title: 'Inclusão e Diversidade', desc: 'Espaço aberto a autores de diferentes origens e áreas.' },
+  { icon: '🤝', title: 'Colaboração',            desc: 'Estímulo à troca de ideias e ao diálogo acadêmico global.' },
+];
+
+const DadosRevista: React.FC = () => (
+  <div className="min-h-screen bg-gray-50">
+
+    {/* ── Hero ── */}
+    <section
+      className="relative overflow-hidden py-20 px-4 text-center"
+      style={{ background: 'linear-gradient(135deg, #052e16 0%, #14532d 55%, #166534 100%)' }}
+    >
+      <div className="absolute inset-0 hero-pattern pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-yellow-600/10 blur-3xl rounded-full pointer-events-none" />
+      <div className="relative z-10 max-w-2xl mx-auto">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card text-yellow-300 text-xs font-semibold tracking-widest uppercase mb-5">
+          <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
+          Informações Institucionais
+        </span>
+        <div className="w-16 h-16 rounded-full bg-yellow-600/20 border-2 border-yellow-500/60 flex items-center justify-center mx-auto mb-5">
+          <Info size={28} className="text-yellow-400" />
         </div>
+        <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
+          Dados da <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg,#fde68a,#ca8a04)' }}>Revista</span>
+        </h1>
+        <p className="text-green-100/80 text-base">
+          Informações técnicas, editoriais e institucionais da Revista África.
+        </p>
+      </div>
+    </section>
 
-        <div className="p-8 md:p-12 text-gray-800 leading-relaxed space-y-10 font-sans">
-          <div className="space-y-10">
-            {/* Informações Básicas */}
-            <div className="bg-brand-50 border-l-4 border-brand-800 p-6 shadow-sm">
-              <h2 className="text-2xl font-serif font-bold text-brand-900 mb-4">Informações Básicas</h2>
-              <div className="space-y-2">
-                <p><strong>Nome:</strong> Revista África</p>
-                <p><strong>Responsável:</strong> PhD. Carolina Mendes Figueiredo</p>
-                <p><strong>Editora 1:</strong> Dra. Paciência Veremos</p>
-                <p><strong>Editora 2:</strong> Cármen Inês</p>
-                <p><strong>Contacto:</strong> revistaafricaa@gmail.com</p>
-              </div>
-            </div>
+    {/* ── Quick badges ── */}
+    <section className="bg-white border-b border-gray-100 shadow-sm">
+      <div className="max-w-4xl mx-auto px-4 py-7 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        {[
+          { icon: BookOpen, v: '40+', l: 'Artigos' },
+          { icon: Users,   v: '80+', l: 'Autores' },
+          { icon: Globe,   v: '3',   l: 'Países' },
+          { icon: Award,   v: 'A2',  l: 'Qualis' },
+        ].map(({ icon: Icon, v, l }) => (
+          <div key={l} className="p-3 rounded-xl hover:bg-brand-50 transition-colors group">
+            <Icon size={18} className="text-brand-600 mx-auto mb-1.5 group-hover:scale-110 transition-transform" />
+            <div className="text-2xl font-bold font-serif text-brand-900">{v}</div>
+            <div className="text-xs text-gray-500 font-medium">{l}</div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-            {/* Sobre a RevistaAfrica */}
-            <div>
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-4 border-b-2 border-brand-800 pb-2">Sobre a Revista África</h2>
-              <div className="text-justify space-y-4">
-                <p>
-                  A <strong>Revista África</strong> é uma revista acadêmica dedicada à valorização do conhecimento, da pesquisa e da reflexão crítica sobre temas contemporâneos que impactam África e a sociedade global. O seu objectivo é avaliar e divulgar trabalhos científicos, artigos de opinião e estudos interdisciplinares de forma rigorosa e acessível, promovendo a troca de ideias entre pesquisadores, estudantes e profissionais.
-                </p>
-                <p>
-                  A revista foi criada na sequência de um fórum que reuniu diversos acadêmicos de várias partes do mundo, no qual se reconheceu a necessidade de expandir e democratizar o conhecimento junto de toda a comunidade africana. A partir desse encontro, foram selecionados editores de diferentes países, responsáveis por garantir o contacto permanente com acadêmicos, instituições de ensino e centros de investigação, fortalecendo assim a dimensão internacional e colaborativa da revista.
-                </p>
-                <p>
-                  A Revista África tem como sua base representativa em Moçambique, onde é dirigida por Professores Doutores de diversas categorias e áreas do saber, comprometidos com a excelência científica, a ética acadêmica e a promoção do pensamento crítico. Por meio dessa estrutura editorial plural e qualificada, a revista busca estimular a produção acadêmica de qualidade, contribuir para o debate científico e fortalecer a cultura de investigação e inovação no continente africano.
-                </p>
-              </div>
-              <div className="bg-brand-900 text-brand-100 p-6 mt-6 text-center border-l-4 border-yellow-500 shadow-sm">
-                <p className="text-xl font-serif font-bold italic">
-                  Revista África – "Conhecimento africano que inspira o mundo".
-                </p>
-              </div>
-            </div>
+    <div className="max-w-5xl mx-auto px-4 py-14 space-y-14">
 
-            {/* Missão */}
-            <div className="bg-brand-50 border-l-4 border-brand-800 p-6 shadow-sm">
-              <h2 className="text-2xl font-serif font-bold text-brand-900 mb-3">Missão</h2>
-              <p className="text-justify text-brand-800 font-medium">
-                Promover a produção, avaliação e divulgação de conhecimento científico e acadêmico de qualidade, incentivando a pesquisa, a reflexão crítica e a inovação, contribuindo para o desenvolvimento intelectual e social de África e da comunidade global.
-              </p>
+      {/* ── Meta table ── */}
+      <section className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+        <div className="px-6 py-4 border-b border-gray-50 flex items-center gap-3">
+          <div className="w-8 h-8 rounded-lg bg-brand-800 flex items-center justify-center">
+            <Layers size={15} className="text-yellow-400" />
+          </div>
+          <h2 className="font-serif font-bold text-brand-900 text-lg">Informações Básicas</h2>
+        </div>
+        <div className="divide-y divide-gray-50">
+          {META.map(({ label, value }) => (
+            <div key={label} className="flex items-center px-6 py-3.5 hover:bg-gray-50 transition-colors">
+              <span className="w-40 text-xs font-bold text-gray-400 uppercase tracking-wider flex-shrink-0">{label}</span>
+              <span className="text-sm text-gray-800 font-medium">{value}</span>
             </div>
+          ))}
+        </div>
+      </section>
 
-            {/* Visão */}
-            <div className="bg-yellow-50 border-l-4 border-yellow-600 p-6 shadow-sm">
-              <h2 className="text-2xl font-serif font-bold text-yellow-900 mb-3">Visão</h2>
-              <p className="text-justify text-yellow-800 font-medium">
-                Ser reconhecida como uma revista de referência no continente africano e internacionalmente, estimulando a investigação interdisciplinar, fortalecendo a cultura científica e tornando o conhecimento acessível a pesquisadores, estudantes e profissionais.
-              </p>
-            </div>
-
-            {/* Valores */}
-            <div className="bg-gray-50 border border-gray-300 p-8">
-              <h2 className="text-2xl font-serif font-bold text-gray-900 mb-6">Valores</h2>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-700 font-bold mt-1">■</span>
-                  <div>
-                    <strong className="text-brand-900 font-serif text-lg">Rigor científico:</strong> compromisso com a qualidade e precisão dos conteúdos publicados.
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-700 font-bold mt-1">■</span>
-                  <div>
-                    <strong className="text-brand-900 font-serif text-lg">Ética e transparência:</strong> práticas justas e claras na seleção e publicação de trabalhos.
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-700 font-bold mt-1">■</span>
-                  <div>
-                    <strong className="text-brand-900 font-serif text-lg">Inovação e criatividade:</strong> incentivo à originalidade e novas abordagens de estudo.
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-700 font-bold mt-1">■</span>
-                  <div>
-                    <strong className="text-brand-900 font-serif text-lg">Inclusão e diversidade:</strong> espaço aberto a autores de diferentes origens e áreas do conhecimento.
-                  </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-700 font-bold mt-1">■</span>
-                  <div>
-                    <strong className="text-brand-900 font-serif text-lg">Colaboração:</strong> estímulo à troca de ideias e ao diálogo acadêmico.
-                  </div>
-                </li>
-              </ul>
-            </div>
+      {/* ── About ── */}
+      <section className="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 className="text-2xl font-serif font-bold text-brand-900 section-title mb-5">Sobre a Revista</h2>
+          <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
+            <p>
+              A <strong className="text-brand-900">Revista África</strong> é uma revista acadêmica dedicada à valorização do conhecimento, da pesquisa e da reflexão crítica sobre temas contemporâneos que impactam África e a sociedade global.
+            </p>
+            <p>
+              Criada após um fórum internacional de acadêmicos, a revista busca expandir e democratizar o conhecimento junto da comunidade africana, reunindo editores de diferentes países para garantir contacto permanente com acadêmicos e centros de investigação.
+            </p>
+            <p>
+              Com base em Moçambique, é dirigida por Professores Doutores comprometidos com excelência científica e a promoção do pensamento crítico no continente africano.
+            </p>
           </div>
         </div>
-      </div>
+        <div className="relative rounded-2xl overflow-hidden shadow-xl">
+          <img
+            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=70"
+            alt="Continente africano"
+            className="w-full h-56 object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-5">
+            <blockquote className="text-white font-serif italic text-sm text-center">
+              "Conhecimento africano que inspira o mundo."
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Mission & Vision ── */}
+      <section className="grid md:grid-cols-2 gap-6">
+        <div className="rounded-2xl p-7 border border-brand-200 bg-brand-50 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-28 h-28 bg-brand-200/40 rounded-full -translate-y-1/3 translate-x-1/3 blur-xl pointer-events-none" />
+          <div className="relative z-10">
+            <div className="w-11 h-11 rounded-xl bg-brand-800 flex items-center justify-center mb-4">
+              <Target size={20} className="text-yellow-400" />
+            </div>
+            <h3 className="text-lg font-serif font-bold text-brand-900 mb-3">Missão</h3>
+            <p className="text-brand-800 text-sm leading-relaxed">
+              Promover a produção, avaliação e divulgação de conhecimento científico e acadêmico de qualidade, incentivando a pesquisa, a reflexão crítica e a inovação, contribuindo para o desenvolvimento intelectual e social de África e da comunidade global.
+            </p>
+          </div>
+        </div>
+        <div className="rounded-2xl p-7 border border-yellow-200 bg-yellow-50 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-28 h-28 bg-yellow-200/40 rounded-full -translate-y-1/3 translate-x-1/3 blur-xl pointer-events-none" />
+          <div className="relative z-10">
+            <div className="w-11 h-11 rounded-xl bg-yellow-600 flex items-center justify-center mb-4">
+              <Eye size={20} className="text-white" />
+            </div>
+            <h3 className="text-lg font-serif font-bold text-yellow-900 mb-3">Visão</h3>
+            <p className="text-yellow-800 text-sm leading-relaxed">
+              Ser reconhecida como uma revista de referência no continente africano e internacionalmente, estimulando a investigação interdisciplinar, fortalecendo a cultura científica e tornando o conhecimento acessível a pesquisadores, estudantes e profissionais.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Values ── */}
+      <section>
+        <h2 className="text-2xl font-serif font-bold text-brand-900 section-title mb-8">Valores</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {VALUES.map(v => (
+            <div key={v.title} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+              <span className="text-3xl mb-3 block">{v.icon}</span>
+              <h4 className="font-bold text-brand-900 mb-1.5 text-sm">{v.title}</h4>
+              <p className="text-gray-500 text-xs leading-relaxed">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Quote banner ── */}
+      <section
+        className="rounded-2xl py-12 px-8 text-center relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #052e16 0%, #14532d 60%, #166534 100%)' }}
+      >
+        <div className="absolute inset-0 hero-pattern pointer-events-none" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-600/10 blur-3xl rounded-full pointer-events-none" />
+        <div className="relative z-10">
+          <div className="text-5xl mb-4 text-yellow-400/60">"</div>
+          <blockquote className="text-2xl font-serif font-bold text-white max-w-xl mx-auto leading-snug">
+            Conhecimento africano que inspira o mundo.
+          </blockquote>
+          <div className="mt-4 text-green-100/50 text-sm">— Revista África</div>
+        </div>
+      </section>
     </div>
-  );
-};
+  </div>
+);
 
 export default DadosRevista;

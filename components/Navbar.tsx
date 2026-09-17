@@ -1,263 +1,188 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { BookOpen, LogOut, Upload, LayoutDashboard, Mail, Menu, X } from 'lucide-react';
+import { LogOut, Upload, LayoutDashboard, Mail, Menu, X } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
-const Navbar: React.FC = () => {
-  const { isAuthenticated, logout, user } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+const NAV_LINKS = [
+  { path: '/',                   label: 'Início' },
+  { path: '/artigos',            label: 'Artigos' },
+  { path: '/sobre',              label: 'Sobre' },
+  { path: '/submissoes',         label: 'Submissões' },
+  { path: '/conselho-editorial', label: 'Conselho' },
+  { path: '/dados-revista',      label: 'Dados' },
+  { path: '/contacto',           label: 'Contacto' },
+];
 
-  const handleLogout = () => {
-    logout();
-    navigate('/');
-  };
+const Navbar: React.FC = () => {
+  const { isAuthenticated, logout } = useAuth();
+  const navigate   = useNavigate();
+  const location   = useLocation();
+  const [open, setOpen]       = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  /* shrink navbar on scroll */
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  /* close mobile menu on route change */
+  useEffect(() => { setOpen(false); }, [location.pathname]);
 
   const isActive = (path: string) => location.pathname === path;
 
-  const handleSubmitArticle = () => {
-    window.location.href = 'mailto:revistaafricaa@gmail.com?subject=Submissão de Artigo';
-  };
-
   return (
-    <nav className="bg-gradient-to-r from-brand-900 to-brand-800 border-b border-brand-950 sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center gap-3">
-              <img 
-                src="/logo.svg" 
-                alt="RevistaAfrica Logo" 
-                className="h-16 w-16 object-cover border-2 border-yellow-600 shadow-sm"
-              />
-            </Link>
-          </div>
+    <>
+      <nav
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? 'bg-brand-950/95 backdrop-blur-md shadow-xl shadow-black/20 py-0'
+            : 'bg-gradient-to-r from-brand-950 via-brand-900 to-brand-800 py-0'
+        }`}
+        style={{ borderBottom: '2px solid rgba(202,138,4,0.5)' }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`flex items-center justify-between transition-all duration-300 ${scrolled ? 'h-16' : 'h-20'}`}>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-1">
-            <Link
-              to="/"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                isActive('/') 
-                  ? 'bg-brand-900 text-white border-b-2 border-yellow-600' 
-                  : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
-              }`}
-            >
-              Início
-            </Link>
-            <Link
-              to="/artigos"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                isActive('/artigos') 
-                  ? 'bg-brand-900 text-white border-b-2 border-yellow-600' 
-                  : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
-              }`}
-            >
-              Artigos
-            </Link>
-            <Link
-              to="/sobre"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                isActive('/sobre') 
-                  ? 'bg-brand-900 text-white border-b-2 border-yellow-600' 
-                  : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
-              }`}
-            >
-              Sobre Nós
-            </Link>
-            <Link
-              to="/submissoes"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                isActive('/submissoes') 
-                  ? 'bg-brand-900 text-white border-b-2 border-yellow-600' 
-                  : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
-              }`}
-            >
-              Submissões
-            </Link>
-            <Link
-              to="/conselho-editorial"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                isActive('/conselho-editorial') 
-                  ? 'bg-brand-900 text-white border-b-2 border-yellow-600' 
-                  : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
-              }`}
-            >
-              Conselho Editorial
-            </Link>
-            <Link
-              to="/dados-revista"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                isActive('/dados-revista') 
-                  ? 'bg-brand-900 text-white border-b-2 border-yellow-600' 
-                  : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
-              }`}
-            >
-              Dados da Revista
-            </Link>
-            <Link
-              to="/contacto"
-              className={`px-4 py-2 text-sm font-medium transition-colors ${
-                isActive('/contacto') 
-                  ? 'bg-brand-900 text-white border-b-2 border-yellow-600' 
-                  : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
-              }`}
-            >
-              Contacto
+            {/* ── Logo ── */}
+            <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-yellow-500/20 blur-md scale-125 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <img
+                  src="/logo.svg"
+                  alt="Revista África"
+                  className={`relative object-cover rounded-full border-2 border-yellow-500/70 shadow-md group-hover:border-yellow-400 transition-all duration-300 ${scrolled ? 'h-10 w-10' : 'h-14 w-14'}`}
+                />
+              </div>
+              <div className="hidden sm:block">
+                <span className="block text-white font-serif font-bold text-base leading-tight">Revista África</span>
+                <span className="block text-yellow-400/70 text-[10px] font-medium tracking-widest uppercase">Periódico Científico</span>
+              </div>
             </Link>
 
-            <div className="h-6 w-px bg-brand-600 mx-2"></div>
-
-            {isAuthenticated ? (
-              <>
+            {/* ── Desktop links ── */}
+            <div className="hidden lg:flex items-center gap-0.5">
+              {NAV_LINKS.map(({ path, label }) => (
                 <Link
-                  to="/admin"
-                  className={`flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors ${
-                    isActive('/admin') 
-                      ? 'bg-brand-900 text-white' 
-                      : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
+                  key={path}
+                  to={path}
+                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-md group ${
+                    isActive(path)
+                      ? 'text-yellow-400'
+                      : 'text-green-100/80 hover:text-white'
                   }`}
                 >
-                  <LayoutDashboard size={18} />
-                  Painel
+                  {label}
+                  {/* active underline */}
+                  <span
+                    className={`absolute bottom-0 left-2 right-2 h-0.5 bg-yellow-500 rounded-full transition-all duration-300 ${
+                      isActive(path) ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0 group-hover:opacity-60 group-hover:scale-x-100'
+                    }`}
+                  />
                 </Link>
-                <Link
-                  to="/admin/upload"
-                  className={`flex items-center gap-2 px-3 py-2 text-sm font-medium transition-colors ${
-                    isActive('/admin/upload') 
-                      ? 'bg-brand-900 text-white' 
-                      : 'text-brand-50 hover:text-white hover:bg-brand-900/50'
-                  }`}
-                >
-                  <Upload size={18} />
-                  Publicar
-                </Link>
-                <button
-                  onClick={handleLogout}
-                  className="p-2 text-brand-50 hover:text-red-300 transition-colors hover:bg-red-900/30 ml-2"
-                  title="Sair"
-                >
-                  <LogOut size={20} />
-                </button>
-              </>
-            ) : (
-              <button
-                onClick={handleSubmitArticle}
-                className="flex items-center gap-2 px-4 py-2 bg-yellow-600 text-white hover:bg-yellow-700 transition-colors shadow-sm font-semibold text-sm ml-2 rounded-none"
-              >
-                <Mail size={18} />
-                Submeta seu Artigo Aqui
-              </button>
-            )}
-          </div>
+              ))}
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center">
+              <div className="w-px h-5 bg-white/20 mx-3" />
+
+              {isAuthenticated ? (
+                <div className="flex items-center gap-1">
+                  <Link
+                    to="/admin"
+                    className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-green-100/80 hover:text-white rounded-md transition-colors"
+                  >
+                    <LayoutDashboard size={15} />
+                    Painel
+                  </Link>
+                  <Link
+                    to="/admin/upload"
+                    className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-green-100/80 hover:text-white rounded-md transition-colors"
+                  >
+                    <Upload size={15} />
+                    Publicar
+                  </Link>
+                  <button
+                    onClick={() => { logout(); navigate('/'); }}
+                    title="Sair"
+                    className="p-2 text-green-100/60 hover:text-red-400 rounded-md transition-colors ml-1"
+                  >
+                    <LogOut size={18} />
+                  </button>
+                </div>
+              ) : (
+                <a
+                  href="mailto:revistaafricaa@gmail.com?subject=Submissão de Artigo"
+                  className="flex items-center gap-2 px-4 py-2 bg-yellow-600 hover:bg-yellow-500 text-white font-semibold text-sm rounded-lg transition-all duration-200 shadow-md hover:shadow-yellow-500/30 ml-1"
+                >
+                  <Mail size={15} />
+                  Submeter Artigo
+                </a>
+              )}
+            </div>
+
+            {/* ── Mobile hamburger ── */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-brand-50 hover:text-white hover:bg-brand-900/50"
+              onClick={() => setOpen(v => !v)}
+              className="lg:hidden p-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+              aria-label="Menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {open ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden pb-4 space-y-1 border-t border-brand-800 pt-2">
-            <Link
-              to="/"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 text-sm font-medium ${
-                isActive('/') 
-                  ? 'bg-brand-900 text-white border-l-4 border-yellow-600' 
-                  : 'text-brand-50 hover:bg-brand-900/50'
-              }`}
-            >
-              Início
-            </Link>
-            <Link
-              to="/artigos"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 text-sm font-medium ${
-                isActive('/artigos') 
-                  ? 'bg-brand-900 text-white border-l-4 border-yellow-600' 
-                  : 'text-brand-50 hover:bg-brand-900/50'
-              }`}
-            >
-              Artigos
-            </Link>
-            <Link
-              to="/sobre"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 text-sm font-medium ${
-                isActive('/sobre') 
-                  ? 'bg-brand-900 text-white border-l-4 border-yellow-600' 
-                  : 'text-brand-50 hover:bg-brand-900/50'
-              }`}
-            >
-              Sobre Nós
-            </Link>
-            <Link
-              to="/submissoes"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 text-sm font-medium ${
-                isActive('/submissoes') 
-                  ? 'bg-brand-900 text-white border-l-4 border-yellow-600' 
-                  : 'text-brand-50 hover:bg-brand-900/50'
-              }`}
-            >
-              Submissões
-            </Link>
-            <Link
-              to="/conselho-editorial"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 text-sm font-medium ${
-                isActive('/conselho-editorial') 
-                  ? 'bg-brand-900 text-white border-l-4 border-yellow-600' 
-                  : 'text-brand-50 hover:bg-brand-900/50'
-              }`}
-            >
-              Conselho Editorial
-            </Link>
-            <Link
-              to="/dados-revista"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 text-sm font-medium ${
-                isActive('/dados-revista') 
-                  ? 'bg-brand-900 text-white border-l-4 border-yellow-600' 
-                  : 'text-brand-50 hover:bg-brand-900/50'
-              }`}
-            >
-              Dados da Revista
-            </Link>
-            <Link
-              to="/contacto"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block px-4 py-2 text-sm font-medium ${
-                isActive('/contacto') 
-                  ? 'bg-brand-900 text-white border-l-4 border-yellow-600' 
-                  : 'text-brand-50 hover:bg-brand-900/50'
-              }`}
-            >
-              Contacto
-            </Link>
-            {!isAuthenticated && (
-              <button
-                onClick={() => {
-                  handleSubmitArticle();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full text-left px-4 py-2 bg-yellow-600 text-white hover:bg-yellow-700 font-semibold text-sm mt-2 rounded-none border-l-4 border-yellow-800"
+        {/* ── Mobile drawer ── */}
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            open ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+          }`}
+          style={{ borderTop: open ? '1px solid rgba(255,255,255,0.08)' : 'none' }}
+        >
+          <div className="px-4 py-4 space-y-1 bg-brand-950/98 backdrop-blur-md">
+            {NAV_LINKS.map(({ path, label }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                  isActive(path)
+                    ? 'bg-yellow-600/20 text-yellow-400 border-l-2 border-yellow-500'
+                    : 'text-green-100/80 hover:bg-white/5 hover:text-white border-l-2 border-transparent'
+                }`}
               >
-                Submeta seu Artigo Aqui
-              </button>
-            )}
+                {label}
+              </Link>
+            ))}
+
+            <div className="pt-3 border-t border-white/10 mt-3 space-y-2">
+              {isAuthenticated ? (
+                <>
+                  <Link to="/admin" className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium text-green-100/80 hover:bg-white/5">
+                    <LayoutDashboard size={16} /> Painel Admin
+                  </Link>
+                  <Link to="/admin/upload" className="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium text-green-100/80 hover:bg-white/5">
+                    <Upload size={16} /> Publicar Artigo
+                  </Link>
+                  <button
+                    onClick={() => { logout(); navigate('/'); }}
+                    className="w-full flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium text-red-400 hover:bg-red-900/20"
+                  >
+                    <LogOut size={16} /> Sair
+                  </button>
+                </>
+              ) : (
+                <a
+                  href="mailto:revistaafricaa@gmail.com?subject=Submissão de Artigo"
+                  className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-yellow-600 hover:bg-yellow-500 text-white font-bold rounded-xl transition-colors"
+                >
+                  <Mail size={16} />
+                  Submeter Artigo
+                </a>
+              )}
+            </div>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      </nav>
+    </>
   );
 };
 
